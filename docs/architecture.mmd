@@ -1,0 +1,7 @@
+flowchart TD
+    U[User/CLI] --> API[API Gateway]
+    API --> L[Lambda Pipeline Generator]
+    L --> B[Bedrock Claude 3 Sonnet]
+    B --> L
+    L --> OUT[Generated Pipeline YAML]
+
