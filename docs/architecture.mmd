@@ -1,7 +1,12 @@
 flowchart TD
-    U[User/CLI] --> API[API Gateway]
-    API --> L[Lambda Pipeline Generator]
-    L --> B[Bedrock Claude 3 Sonnet]
-    B --> L
-    L --> OUT[Generated Pipeline YAML]
+    U["User or CLI"]
+    API["HTTP API Gateway"]
+    L["Pipeline Generator Lambda"]
+    B["Amazon Bedrock - Claude 3 Sonnet"]
+    OUT["Generated Pipeline YAML / Templates"]
 
+    U --> API
+    API --> L
+    L --> B
+    B --> L
+    L --> OUT
